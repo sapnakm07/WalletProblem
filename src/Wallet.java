@@ -4,25 +4,24 @@ public class Wallet
 
     int TotalAmount=0;
 
-    public void addMoney(Money amount)
+    public void addMoney( double amount)
     {
-        netbalance=netbalance+amount.getValue();
+        netbalance += amount;
         System.out.println(netbalance);
     }
 
-    public boolean reduceMoney(Money amount)
+    public void reduceMoney(double amount)
     {
-        if(netbalance<amount.getValue())
-        return false;
-
-        netbalance=netbalance-amount.getValue();
-        System.out.println(netbalance);
-         return true;
-
-
+        if(netbalance>amount)
+        {
+            netbalance -= amount;
+            System.out.println(netbalance);
+        }
 
     }
+
     public double checkBalance()
-    {return netbalance;
+    {
+        return netbalance;
     }
 }
